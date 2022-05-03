@@ -8,7 +8,7 @@ import {
 } from "../../redux/actions";
 
 
-export class Buscador extends Component {
+export class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,13 +45,13 @@ export class Buscador extends Component {
          {
           this.props.moviesLoaded?.map(m => {
             return (
-              <li>
-                <div key={m.imdbID}>
+              <li key={m.imdbID}>
+                <div>
                   <Link to={`movie/${m.imdbID}`}>
                     <p>{m.Title}</p>
                   </Link>
                   <p>{m.Type}</p>
-                  <img src={m.Poster} />
+                  <img src={m.Poster} alt="movie poster" />
                   <p>{m.Year}</p>
                   <button onClick={() => this.props.addMovieFavorite({
                     imdbID: m.imdbID,
@@ -70,23 +70,23 @@ export class Buscador extends Component {
       </div>
     );
   }
-}
+};
 
 function mapStateToProps(state) {
   return {
     moviesLoaded: state.moviesLoaded
   };
-}
+};
 
 function mapDispatchToProps(dispatch) {
   return {
     addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
     getMovies: title => dispatch(getMovies(title))
   };
-}
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Buscador);
+)(SearchBar);
 

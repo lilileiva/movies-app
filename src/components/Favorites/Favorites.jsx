@@ -15,13 +15,13 @@ export class ConnectedList extends Component {
 
           {this.props.moviesFavorites?.map(m => {
             return (
-              <li>
-                <div key={m.imdbID}>
+              <li key={m.imdbID}>
+                <div>
                   <Link to={`movie/${m.imdbID}`}>
                     <h3>{m.Title}</h3>
                   </Link>
                   <p>{m.Type}</p>
-                  <img src={m.Poster} />
+                  <img src={m.Poster} alt="movie poster" />
                   <p>{m.Year}</p>
                   <button onClick={() => this.props.removeMovieFavorite(m.imdbID)}>X</button>
                 </div>
