@@ -72,6 +72,7 @@ export class SearchBar extends Component {
   }
 };
 
+
 function mapStateToProps(state) {
   return {
     moviesLoaded: state.moviesLoaded
@@ -89,4 +90,6 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SearchBar);
+
+
 

@@ -6,20 +6,14 @@ import Movie from "../components/Movie/Movie.jsx";
 import Favorites from "../components/Favorites/Favorites.jsx";
 import './App.css';
 
+
 function App() {
   return (
       <div>
         <NavBar />
-        <Route exact path="/">
-          <SearchBar />
-        </Route>
-        <Route exact path="/favorites">
-          <Favorites />
-        </Route>
-        {/* <Route exact path="/movie/:id">
-          <Movie />
-        </Route> */}
-        <Route path='/movie/:id' element={<Movie />} />
+        <Route exact path="/" component={SearchBar} />
+        <Route exact path="/favorites" component={Favorites} />
+        <Route exact path='/movie/:id' component={Movie} />
       </div>
   );
 }

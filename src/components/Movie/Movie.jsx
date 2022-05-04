@@ -13,6 +13,7 @@ class Movie extends React.Component {
         return (
             <div className="movie-detail">
                 Detalle de la pelicula  
+
                 <h3>{this.props.movieDetail.Title}</h3>
                 <img src={this.props.movieDetail.Poster} alt="movie poster" />
                 <p>{this.props.movieDetail.Plot}</p>
@@ -22,6 +23,7 @@ class Movie extends React.Component {
                 <p>{this.props.movieDetail.Runtime}</p>
                 <p>{this.props.movieDetail.Writer}</p>
                 <p>{this.props.movieDetail.Actors}</p>
+
             </div>
         );
     }
