@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
-import './SearchBar.css';
 import {
   getMovies,
   addMovieFavorite,
@@ -27,19 +26,19 @@ export class SearchBar extends Component {
     const { title } = this.state;
     return (
       <div>
-        <h2>Buscador</h2>
-        <form className="form-container" onSubmit={(e) => this.handleSubmit(e)}>
-          <div>
-            <label className="label" htmlFor="title">Película: </label>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
+          <div className="inline">
             <input
-              type="text"
+              className="border-2 border-zinc-300"
               id="title"
+              type="text"
+              placeholder="Find a movie..."
               autoComplete="off"
               value={title}
               onChange={(e) => this.handleChange(e)}
             />
+            <button type="submit" className="border-2 border-zinc-300">Search</button>
           </div>
-          <button type="submit">BUSCAR</button>
         </form>
         <ul>
          {
