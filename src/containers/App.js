@@ -9,7 +9,7 @@ import Favorites from "../components/Favorites/Favorites.jsx";
 function App() {
 
   return (
-      <div className="text-lg">
+      <div className="text-lg bg-neutral-700">
         <Navbar />
         <Route exact path="/" component={SearchBar} />
         <Route exact path="/favorites" component={Favorites} />

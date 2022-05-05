@@ -11,30 +11,29 @@ export class ConnectedList extends Component {
       <div>
         <h2>Películas Favoritas</h2>
         <ul>
-          {/* Aqui deberias poner tu lista de peliculas! */}
-
-          {this.props.moviesFavorites?.map(m => {
-            return (
-              <li key={m.imdbID}>
-                <div>
-                  <Link to={`movie/${m.imdbID}`}>
-                    <h3>{m.Title}</h3>
-                  </Link>
-                  <p>{m.Type}</p>
-                  <img src={m.Poster} alt="movie poster" />
-                  <p>{m.Year}</p>
-                  <button onClick={() => {
-                    this.props.removeMovieFavorite(m.imdbID)
-                    alert(`${m.Title} was removed from favorites`)
-                    }
-                  }>
-                    X
-                  </button>
-                </div>
-              </li>
-            )
-          })}
-
+          {
+            this.props.moviesFavorites?.map(m => {
+              return (
+                <li key={m.imdbID}>
+                  <div>
+                    <Link to={`movie/${m.imdbID}`}>
+                      <h3>{m.Title}</h3>
+                    </Link>
+                    <p>{m.Type}</p>
+                    <img src={m.Poster} alt="movie poster" />
+                    <p>{m.Year}</p>
+                    <button onClick={() => {
+                      this.props.removeMovieFavorite(m.imdbID)
+                      alert(`${m.Title} was removed from favorites`)
+                      }
+                    }>
+                      X
+                    </button>
+                  </div>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     );
