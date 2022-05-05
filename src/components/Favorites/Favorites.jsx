@@ -23,7 +23,13 @@ export class ConnectedList extends Component {
                   <p>{m.Type}</p>
                   <img src={m.Poster} alt="movie poster" />
                   <p>{m.Year}</p>
-                  <button onClick={() => this.props.removeMovieFavorite(m.imdbID)}>X</button>
+                  <button onClick={() => {
+                    this.props.removeMovieFavorite(m.imdbID)
+                    alert(`${m.Title} was removed from favorites`)
+                    }
+                  }>
+                    X
+                  </button>
                 </div>
               </li>
             )

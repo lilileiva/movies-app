@@ -52,12 +52,16 @@ export class SearchBar extends Component {
                         <h2 className="text-xl font-bold mr-3 truncate">{m.Title}</h2>
                       </div>
                     </Link>
-                    <button className="border-2 border-zinc-300 bg-zinc-100 ml-1 w-10 h-10" onClick={() => this.props.addMovieFavorite({
-                      imdbID: m.imdbID,
-                      Title: m.Title,
-                      Year: m.Year,
-                      Type: m.Type,
-                      Poster: m.Poster})}>
+                    <button className="border-2 border-zinc-300 bg-zinc-100 ml-1 w-10 h-10" onClick={() => {
+                      this.props.addMovieFavorite({
+                        imdbID: m.imdbID,
+                        Title: m.Title,
+                        Year: m.Year,
+                        Type: m.Type,
+                        Poster: m.Poster})
+                      alert(`${m.Title} was added to favorites`)
+                      }
+                    }>
                       ⭐
                     </button>
                   </div>
