@@ -7,6 +7,7 @@ import Favorites from "../components/Favorites/Favorites.jsx";
 
 
 function App() {
+
   return (
       <div className="text-lg">
         <Navbar />

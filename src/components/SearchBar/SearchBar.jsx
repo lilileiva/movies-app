@@ -25,7 +25,7 @@ export class SearchBar extends Component {
   render() {
     const { title } = this.state;
     return (
-      <div>
+      <div className="bg-gray-400 flex-col justify-center mx-10 my-5">
         <form onSubmit={(e) => this.handleSubmit(e)}>
           <div className="inline">
             <input
@@ -40,26 +40,31 @@ export class SearchBar extends Component {
             <button type="submit" className="border-2 border-zinc-300">Search</button>
           </div>
         </form>
-        <ul>
+        <ul className="flex flex-wrap">
          {
           this.props.moviesLoaded?.map(m => {
             return (
-              <li key={m.imdbID}>
-                <div>
+              <li className="bg-white flex-col self-center mx-20 my-10" key={m.imdbID}>
+                <div className="">
+                  <div className="flex inline mb-2">
+                    <Link to={`movie/${m.imdbID}`}>
+                      <div className="w-64 max-h-12">
+                        <h2 className="text-xl font-bold mr-3 truncate">{m.Title}</h2>
+                      </div>
+                    </Link>
+                    <button className="border-2 border-zinc-300 bg-zinc-100 ml-1 w-10 h-10" onClick={() => this.props.addMovieFavorite({
+                      imdbID: m.imdbID,
+                      Title: m.Title,
+                      Year: m.Year,
+                      Type: m.Type,
+                      Poster: m.Poster})}>
+                      ⭐
+                    </button>
+                  </div>
                   <Link to={`movie/${m.imdbID}`}>
-                    <p>{m.Title}</p>
+                    <img className="w-64 h-96" src={m.Poster} alt="movie poster" />
                   </Link>
-                  <p>{m.Type}</p>
-                  <img src={m.Poster} alt="movie poster" />
-                  <p>{m.Year}</p>
-                  <button onClick={() => this.props.addMovieFavorite({
-                    imdbID: m.imdbID,
-                    Title: m.Title,
-                    Year: m.Year,
-                    Type: m.Type,
-                    Poster: m.Poster})}>
-                    FAV
-                  </button>
+                  <p className="text-gray-500">{m.Type} ({m.Year})</p>
                 </div>
               </li>
             )
