@@ -5,6 +5,9 @@ import {
   getMovies,
   addMovieFavorite,
 } from "../../redux/actions";
+import Movies from "../Movies/Movies.jsx";
+import { BiSearchAlt } from 'react-icons/bi'
+import { BsBookmarkStar } from 'react-icons/bs'
 
 
 export class SearchBar extends Component {
@@ -27,7 +30,7 @@ export class SearchBar extends Component {
     return (
       <div className="container mx-auto">
         <form className="flex justify-center" onSubmit={(e) => this.handleSubmit(e)}>
-          <div className="inline">
+          <div className="flex inline">
             <input
               className="border-2 border-zinc-300 rounded-xl mr-2"
               id="title"
@@ -37,21 +40,22 @@ export class SearchBar extends Component {
               value={title}
               onChange={(e) => this.handleChange(e)}
             />
-            <button type="submit" className="bg-red-500 text-white border-2 border-white px-2 rounded-xl">Search</button>
+            <button type="submit" className="text-red-500 text-3xl px-2 rounded-xl">
+              <BiSearchAlt/>
+            </button>
           </div>
         </form>
         <ul className="flex flex-wrap justify-center">
          {
-          this.props.moviesLoaded?.map(m => {
-            return (
-              <li className="bg-neutral-800 p-4 mx-20 my-10 rounded-xl" key={m.imdbID}>
+          this.props.moviesLoaded ? this.props.moviesLoaded.map(m => (
+              <li className="bg-neutral-800 p-4 mx-10 my-10 rounded-xl" key={m.imdbID}>
                 <div className="flex inline mb-2 mx-auto">
                   <Link to={`movie/${m.imdbID}`}>
-                    <div className="w-64 max-h-12">
+                    <div className="w-56 max-h-12">
                       <h2 className="text-xl text-red-400 font-bold mr-3 truncate">{m.Title}</h2>
                     </div>
                   </Link>
-                  <button className="border-2 border-zinc-300 bg-neutral-500 rounded-xl" onClick={() => {
+                  <button className="text-red-300 text-2xl" onClick={() => {
                     this.props.addMovieFavorite({
                       imdbID: m.imdbID,
                       Title: m.Title,
@@ -62,7 +66,7 @@ export class SearchBar extends Component {
                     alert(`${m.Title} was added to favorites`)
                   }
                   }>
-                    ⭐
+                    <BsBookmarkStar/>
                   </button>
                 </div>
                 <Link to={`movie/${m.imdbID}`}>
@@ -70,9 +74,11 @@ export class SearchBar extends Component {
                 </Link>
                 <p className="text-red-400">{m.Type} ({m.Year})</p>
               </li>
-            )
-          })
-         }
+              )
+            ) : <p className="text-2xl text-red-400 mt-10">No results... :(</p>
+
+           //this.props.moviesLoaded ? <Movies /> : <p>No hay pelis</p>
+          }
         </ul>
       </div>
     );

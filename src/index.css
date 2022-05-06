@@ -18,6 +18,6 @@ code {
 
 @layer base {
   html {
-    font-family: Arial, system-ui, sans-serif;
+    font-family: 'Roboto Condensed' ,Arial, system-ui, sans-serif;
   }
 }

@@ -28,8 +28,8 @@ const initialState = {
       else if (action.type === ADD_MOVIE_FAVORITE) {
           return {
             ...state,
-            //  moviesFavorites: [...state.moviesFavorites, action.payload]
-             moviesFavorites: [...state.moviesFavorites.filter(m =>  m.imdbID === action.payload), action.payload]
+            moviesFavorites: [...state.moviesFavorites, action.payload]
+            //moviesFavorites: [...state.moviesFavorites.filter(m =>  m.imdbID === action.payload), action.payload]
           }
       }
       else if (action.type === REMOVE_MOVIE_FAVORITE) {
