@@ -10,7 +10,7 @@ import About from "../components/About/About.jsx";
 function App() {
 
   return (
-      <div className="text-lg bg-neutral-700 h-full">
+      <div className="text-lg h-full">
         <Navbar />
         <Route exact path="/" component={SearchBar} />
         <Route exact path="/favorites" component={Favorites} />

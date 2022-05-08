@@ -17,6 +17,9 @@ code {
 @tailwind utilities;
 
 @layer base {
+  body {
+    background: rgb(55 65 81);
+  }
   html {
     font-family: 'Roboto Condensed' ,Arial, system-ui, sans-serif;
   }

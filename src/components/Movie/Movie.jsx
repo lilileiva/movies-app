@@ -14,18 +14,18 @@ class Movie extends React.Component {
     return (
       <div className='container mx-auto flex flex-col'>
         <Link to="/">
-          <button className='mb-4 text-red-400 text-3xl'>
+          <button className='mb-4 text-red-300 hover:text-red-400 text-3xl'>
             <BsArrowLeftSquare/>
           </button>
         </Link>
-        <div className='flex flex-row'>
+        <div className='flex flex-row bg-gray-600 rounded-xl'>
           <div>
-            <img className='w-80' src={this.props.movieDetail.Poster} alt="movie poster" />
+            <img className='w-auto h-full' src={this.props.movieDetail.Poster} alt="movie poster" />
           </div>
           <div className='ml-10'>
             <div className='flex flex-row'>
-              <h3 className='text-2xl font-bold'>{this.props.movieDetail.Title}</h3>
-              <button className="text-red-300 text-2xl ml-4" onClick={() => {
+              <h3 className='text-2xl font-bold text-red-400'>{this.props.movieDetail.Title}</h3>
+              <button className="text-red-300 hover:text-red-400 text-2xl ml-4" onClick={() => {
                 this.props.addMovieFavorite({
                   imdbID: this.props.movieDetail.imdbID,
                   Title: this.props.movieDetail.Title,
@@ -43,10 +43,15 @@ class Movie extends React.Component {
             <p className='text-xl'>{this.props.movieDetail.Plot}</p>
             <br/>
             <p>Released: {this.props.movieDetail.Released}</p>
+            <br/>
             <p>Genre: {this.props.movieDetail.Genre}</p>
+            <br/>
             <p>Director: {this.props.movieDetail.Director}</p>
+            <br/>
             <p>Running time: {this.props.movieDetail.Runtime}</p>
+            <br/>
             <p>Writer: {this.props.movieDetail.Writer}</p>
+            <br/>
             <p>Actors: {this.props.movieDetail.Actors}</p>
           </div>
         </div>
