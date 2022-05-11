@@ -9,7 +9,6 @@ import {
 
 
 function Movies(state) {
-
     return (
         <ul className="flex flex-wrap justify-center">
             {
