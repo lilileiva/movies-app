@@ -8,12 +8,12 @@ import {
   } from "../../redux/actions";
 
 
-function Movies() {
+function Movies(state) {
 
     return (
         <ul className="flex flex-wrap justify-center">
             {
-                this.props.moviesLoaded ? this.props.moviesLoaded.map(m => (
+                state.moviesLoaded ? state.moviesLoaded.map(m => (
                     <li className="bg-gray-600 p-4 mx-10 my-10 rounded-xl" key={m.imdbID}>
                         <div className="flex inline mb-2 mx-auto">
                             <Link to={`movie/${m.imdbID}`}>
@@ -22,7 +22,7 @@ function Movies() {
                                 </div>
                             </Link>
                             <button className="text-red-300 text-2xl hover:text-red-400" onClick={() => {
-                                this.props.addMovieFavorite({
+                                state.addMovieFavorite({
                                     imdbID: m.imdbID,
                                     Title: m.Title,
                                     Year: m.Year,
@@ -42,18 +42,16 @@ function Movies() {
                     </li>
                 )
                 ) : <p className="text-2xl text-red-400 mt-10">No results... :(</p>
-
-                //this.props.moviesLoaded ? <Movies /> : <p>No hay pelis</p>
             }
         </ul>
     )
 }
 
-// function mapStateToProps(state) {
-//     return {
-//       moviesLoaded: state.moviesLoaded
-//     };
-//   };
+function mapStateToProps(state) {
+    return {
+      moviesLoaded: state.moviesLoaded
+    };
+  };
   
   function mapDispatchToProps(dispatch) {
     return {
@@ -63,7 +61,7 @@ function Movies() {
   };
   
   export default connect(
-    // mapStateToProps,
+    mapStateToProps,
     mapDispatchToProps
   )(Movies);
   
