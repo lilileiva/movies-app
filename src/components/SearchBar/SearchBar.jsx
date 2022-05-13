@@ -22,7 +22,7 @@ export class SearchBar extends Component {
     e.preventDefault();
     this.props.getMovies(this.state.title);
     this.setState({title: ''})
-    window.location.href="/movies";  
+    // window.location.href="/movies";
   }
 
   render() {
@@ -41,9 +41,7 @@ export class SearchBar extends Component {
               onChange={(e) => this.handleChange(e)}
             />
             <button type="submit" className="text-red-500 hover:text-red-400 text-3xl px-2 rounded-xl">
-              <Link to='/movies'>
                 <BiSearchAlt />
-              </Link>
             </button>
           </div>
         </form>
