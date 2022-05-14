@@ -6,12 +6,11 @@ import {
     getMovies,
     addMovieFavorite,
 } from "../../redux/actions";
-import Home from "../Home/Home.jsx";
 
 
 function Movies(state) {
     return (
-        <ul className="flex flex-wrap justify-center">
+        <ul className="flex flex-wrap justify-center mt-32">
             {
                 state.moviesLoaded
                     ? state.moviesLoaded.map(m => (
@@ -37,7 +36,7 @@ function Movies(state) {
                                 </button>
                             </div>
                             <Link to={`/movies/${m.imdbID}`}>
-                                <img className="w-64 h-96" src={m.Poster} alt="movie poster" />
+                                <img className="w-64 h-96 object-cover" src={m.Poster} alt="movie poster" />
                             </Link>
                             <p className="text-red-400">{m.Type} ({m.Year})</p>
                         </li>

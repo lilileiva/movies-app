@@ -1,18 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsInfoLg } from "react-icons/bs";
-import logo from '../../img/logo-movie.png';
 
 
 export default function Navbar() {
     return (
         <header>
-            <nav className='text-white bg-red-500 border-b-4 border-red-700 p-5 mb-10'>
+            <nav className='text-white bg-red-500 border-b-4 border-red-700 p-5 mb-10 absolute z-20 w-full'>
                 <div className='flex inline justify-between space-x-5'>
                     <Link exact to="/" >
-                        <div className='flex inline'>
-                            <img src={logo} alt='movies logo' className='w-11 mr-4' />
-                            <button className='text-4xl font-black text-gray-700'>MOVIES</button>
+                        <div className='flex'>
+                            <button className='text-4xl font-black text-gray-700 border-2 border-current pl-2 pr-2'>MOVIES</button>
                         </div>
                     </Link>
                     <ul>

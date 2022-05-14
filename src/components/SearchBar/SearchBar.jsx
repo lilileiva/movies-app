@@ -1,6 +1,6 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import {
   getMovies,
   addMovieFavorite,
@@ -9,6 +9,7 @@ import { BiSearchAlt } from 'react-icons/bi'
 
 
 export class SearchBar extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -22,13 +23,13 @@ export class SearchBar extends Component {
     e.preventDefault();
     this.props.getMovies(this.state.title);
     this.setState({title: ''})
-    // window.location.href="/movies";
+    this.props.history.push('/movies')
   }
 
   render() {
     const { title } = this.state;
     return (
-      <div className="container mx-auto">
+      <div className="container mx-auto relative z-20 top-32">
         <form className="flex justify-center" onSubmit={(e) => this.handleSubmit(e)} >
           <div className="flex inline">
             <input

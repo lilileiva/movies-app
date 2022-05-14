@@ -14,13 +14,13 @@ class Movie extends React.Component {
     return (
       <div className='container mx-auto flex flex-col'>
         <Link to="/">
-          <button className='mb-4 text-red-300 hover:text-red-400 text-3xl'>
+          <button className='mb-4 text-red-300 hover:text-red-400 text-3xl mt-40'>
             <BsArrowLeftSquare/>
           </button>
         </Link>
-        <div className='flex flex-row bg-gray-600 rounded-xl'>
+        <div className='flex flex-row bg-gray-600 rounded-xl mt-4'>
           <div>
-            <img className='w-auto h-full' src={this.props.movieDetail.Poster} alt="movie poster" />
+            <img className='w-96 h-full object-cover rounded-l-xl' src={this.props.movieDetail.Poster} alt="movie poster" />
           </div>
           <div className='ml-10'>
             <div className='flex flex-row'>

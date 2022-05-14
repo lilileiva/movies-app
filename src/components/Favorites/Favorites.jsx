@@ -12,13 +12,13 @@ export class ConnectedList extends Component {
       <div className="container mx-auto">
         <div className="flex inline">
           <Link to="/">
-            <button className='mb-4 text-red-300 hover:text-red-400 text-3xl mr-4'>
+            <button className='mb-4 text-red-300 hover:text-red-400 text-3xl mr-4 mt-40'>
               <BsArrowLeftSquare/>
             </button>
           </Link>
-          <h2 className="text-3xl">Favorites</h2>
+          <h2 className="text-3xl mt-40">Favorites</h2>
         </div>
-        <ul className="flex flex-wrap justify-center">
+        <ul className="flex flex-wrap justify-center mt-4">
           {
             this.props.moviesFavorites ? this.props.moviesFavorites.map(m => (
               <li className="bg-gray-600 p-4 mx-10 my-10 rounded-xl" key={m.imdbID}>
