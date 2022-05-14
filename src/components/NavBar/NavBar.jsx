@@ -6,7 +6,7 @@ import { BsInfoLg } from "react-icons/bs";
 export default function Navbar() {
     return (
         <header>
-            <nav className='text-white bg-red-500 border-b-4 border-red-700 p-5 mb-10 absolute z-20 w-full'>
+            <nav className='absolute text-white bg-red-500 border-b-4 border-red-700 p-5 mb-10 z-20 w-full'>
                 <div className='flex inline justify-between space-x-5'>
                     <Link exact to="/" >
                         <div className='flex'>

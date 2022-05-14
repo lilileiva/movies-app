@@ -10,7 +10,7 @@ import {
 
 function Movies(state) {
     return (
-        <ul className="flex flex-wrap justify-center mt-32">
+        <ul className="flex flex-wrap justify-center absolute mt-40 w-full">
             {
                 state.moviesLoaded
                     ? state.moviesLoaded.map(m => (
@@ -41,26 +41,26 @@ function Movies(state) {
                             <p className="text-red-400">{m.Type} ({m.Year})</p>
                         </li>
                     ))
-                    : <p className="text-2xl text-red-400 mt-10">No results... :(</p>
+                    : <p className="text-2xl text-red-400 mt-20">No results... :(</p>
             }
         </ul>
     )
 }
 
-function mapStateToProps(state) {
+            function mapStateToProps(state) {
     return {
-        moviesLoaded: state.moviesLoaded
+                moviesLoaded: state.moviesLoaded
     };
 };
 
-function mapDispatchToProps(dispatch) {
+            function mapDispatchToProps(dispatch) {
     return {
-        addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
+                addMovieFavorite: movie => dispatch(addMovieFavorite(movie)),
         getMovies: title => dispatch(getMovies(title))
     };
 };
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Movies);
+            export default connect(
+            mapStateToProps,
+            mapDispatchToProps
+            )(Movies);

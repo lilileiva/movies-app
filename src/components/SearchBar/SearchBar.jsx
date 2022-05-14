@@ -29,14 +29,14 @@ export class SearchBar extends Component {
   render() {
     const { title } = this.state;
     return (
-      <div className="container mx-auto relative z-20 top-32">
-        <form className="flex justify-center" onSubmit={(e) => this.handleSubmit(e)} >
-          <div className="flex inline">
+      <div className="absolute z-20 top-32 w-full">
+        <form onSubmit={(e) => this.handleSubmit(e)} >
+          <div className="flex justify-center">
             <input
               className="border-2 border-zinc-300 rounded-xl mr-2"
               id="title"
               type="text"
-              placeholder="Find a movie..."
+              placeholder=" Find a movie..."
               autoComplete="off"
               value={title}
               onChange={(e) => this.handleChange(e)}
