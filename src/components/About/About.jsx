@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { BsArrowLeftSquare } from 'react-icons/bs';
 
-export default function About() {
+function About() {
     return (
         <div className="flex flex-col container mx-auto">
             <div className="flex inline">
@@ -31,3 +31,5 @@ export default function About() {
         </div>
     )
 }
+
+export default About;

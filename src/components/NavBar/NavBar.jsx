@@ -3,23 +3,29 @@ import { Link } from 'react-router-dom';
 import { BsInfoLg } from "react-icons/bs";
 
 
-export default function Navbar() {
+function Navbar() {
     return (
         <header>
             <nav className='absolute text-white bg-red-500 border-b-4 border-red-700 p-5 mb-10 z-20 w-full'>
                 <div className='flex inline justify-between space-x-5'>
                     <Link exact to="/" >
                         <div className='flex'>
-                            <button className='text-4xl font-black text-gray-700 border-2 border-current pl-2 pr-2'>MOVIES</button>
+                            <button className='text-4xl font-black text-gray-700 border-2 border-current pl-2 pr-2'>
+                                MOVIES
+                            </button>
                         </div>
                     </Link>
                     <ul>
-                        <li className='space-x-5'>
+                        <li className='sm:space-x-5 xl:space-x-5'>
                             <Link exact to="/" >
-                                <button className='border-2 font-extrabold text-xl text-gray-700 border-gray-700 p-1 px-2 rounded-3xl'>Home</button>
+                                <button className='sm:inline-flex border-gray-700 border-2 xl:border-2 font-extrabold text-xl text-gray-700 border-gray-700 p-1 px-2 rounded-3xl hidden'>
+                                    Home
+                                </button>
                             </Link>
                             <Link to="/favorites" >
-                                <button className='border-2 font-extrabold text-xl text-gray-700 border-gray-700 p-1 px-2 rounded-3xl'>Favorites</button>
+                                <button className='border-2 font-extrabold text-xl text-gray-700 border-gray-700 p-1 px-2 rounded-3xl sm:border-2 border-gray-700 mx-4'>
+                                    Favorites
+                                </button>
                             </Link>
                             <Link to='/about'>
                                 <button className='border-2 font-extrabold text-xl text-gray-700 border-gray-700 p-1 px-2 rounded-3xl'>
@@ -35,3 +41,5 @@ export default function Navbar() {
         </header>
     )
 };
+
+export default Navbar;
