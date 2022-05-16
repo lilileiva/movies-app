@@ -26,11 +26,14 @@ const initialState = {
           }
       }
       else if (action.type === ADD_MOVIE_FAVORITE) {
-          return {
-            ...state,
-            moviesFavorites: [...state.moviesFavorites, action.payload]
-            //moviesFavorites: [...state.moviesFavorites.filter(m =>  m.imdbID === action.payload), action.payload]
-          }
+        if ( action.payload !== state.moviesFavorites.find(m => m.imdbID) ) {
+            return {
+              ...state,
+              moviesFavorites: [...state.moviesFavorites, action.payload]
+            //   moviesFavorites: [...state.moviesFavorites, state.moviesFavorites.find(m => m.imdbID !== action.payload)]
+            }
+        }
+
       }
       else if (action.type === REMOVE_MOVIE_FAVORITE) {
           return {
