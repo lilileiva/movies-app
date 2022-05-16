@@ -10,38 +10,35 @@ const initialState = {
     moviesFavorites: [],
     moviesLoaded: [],
     movieDetail: {}
-  };
+};
 
-  function rootReducer(state = initialState, action) {
-      if (action.type === GET_MOVIES) {
+function rootReducer(state = initialState, action) {
+    if (action.type === GET_MOVIES) {
         return {
             ...state,
             moviesLoaded: action.payload.Search
         }
-      }
-      else if (action.type === GET_MOVIE_DETAIL) {
-          return {
-              ...state,
-              movieDetail: action.payload
-          }
-      }
-      else if (action.type === ADD_MOVIE_FAVORITE) {
-        if ( action.payload !== state.moviesFavorites.find(m => m.imdbID) ) {
-            return {
-              ...state,
-              moviesFavorites: [...state.moviesFavorites, action.payload]
-            //   moviesFavorites: [...state.moviesFavorites, state.moviesFavorites.find(m => m.imdbID !== action.payload)]
-            }
+    }
+    else if (action.type === GET_MOVIE_DETAIL) {
+        return {
+            ...state,
+            movieDetail: action.payload
+        }
+    }
+    else if (action.type === ADD_MOVIE_FAVORITE) {
+        return {
+            ...state,
+            moviesFavorites: [...state.moviesFavorites, action.payload]
         }
 
-      }
-      else if (action.type === REMOVE_MOVIE_FAVORITE) {
-          return {
-              ...state,
-              moviesFavorites: state.moviesFavorites.filter(m => m.imdbID !== action.payload)
-          }
-      }
-      return state;
-  }
+    }
+    else if (action.type === REMOVE_MOVIE_FAVORITE) {
+        return {
+            ...state,
+            moviesFavorites: state.moviesFavorites.filter(m => m.imdbID !== action.payload)
+        }
+    }
+    return state;
+}
 
-  export default rootReducer;
+export default rootReducer;
