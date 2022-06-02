@@ -2,7 +2,8 @@ import {
     GET_MOVIES,
     GET_MOVIE_DETAIL,
     ADD_MOVIE_FAVORITE,
-    REMOVE_MOVIE_FAVORITE
+    REMOVE_MOVIE_FAVORITE,
+    RESET
 } from "../actions";
 
 
@@ -28,9 +29,8 @@ function rootReducer(state = initialState, action) {
     else if (action.type === ADD_MOVIE_FAVORITE) {
         let favs = []
         let moviesFav = state.moviesFavorites.filter(game => game.imdbID !== action.payload.imdbID)
-        // moviesFav = moviesFav.filter(game => game.imdbID !== action.payload.imdbID)
         if (moviesFav.length !== 0) {
-            favs = moviesFav   
+            favs = moviesFav
             favs.push(action.payload)
         } else {
             favs.push(action.payload)
@@ -44,6 +44,12 @@ function rootReducer(state = initialState, action) {
         return {
             ...state,
             moviesFavorites: state.moviesFavorites.filter(m => m.imdbID !== action.payload)
+        }
+    }
+    else if (action.type === RESET) {
+        return {
+            ...state,
+            movieDetail: {}
         }
     }
     return state;

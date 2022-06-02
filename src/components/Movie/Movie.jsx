@@ -14,7 +14,7 @@ function Movie() {
 
   useEffect(() => {
     dispatch(getMovieDetail(id))
-  }, [dispatch])
+  }, [dispatch, id])
 
   const movieDetail = useSelector((state) => state.movieDetail)
 

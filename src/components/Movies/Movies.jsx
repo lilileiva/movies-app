@@ -1,15 +1,22 @@
-import React, { useState } from "react";
-import { connect, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { BsBookmarkStar, BsFillBookmarkStarFill } from 'react-icons/bs'
 import {
     getMovies,
     addMovieFavorite,
+    reset
 } from "../../redux/actions";
 import Loading from "../Loading/Loading.jsx";
 
 
 function Movies(state) {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(reset())
+    }, [dispatch])
+
     const [favorite, setFavorite] = useState(false);
 
     const moviesLoaded = useSelector((state) => state.moviesLoaded)
