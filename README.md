@@ -2,7 +2,7 @@
 
 ## Movies App
 
-#### Website where you can search movies by title, get its details, and save it in favorites. 
+#### Website where you can search movies by title, see details, and save it in favorites. 
 This project gets movies data from omdb API: https://www.omdbapi.com/ 
 
 ---
