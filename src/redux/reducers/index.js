@@ -26,11 +26,19 @@ function rootReducer(state = initialState, action) {
         }
     }
     else if (action.type === ADD_MOVIE_FAVORITE) {
+        let favs = []
+        let moviesFav = state.moviesFavorites.filter(game => game.imdbID !== action.payload.imdbID)
+        // moviesFav = moviesFav.filter(game => game.imdbID !== action.payload.imdbID)
+        if (moviesFav.length !== 0) {
+            favs = moviesFav   
+            favs.push(action.payload)
+        } else {
+            favs.push(action.payload)
+        }
         return {
             ...state,
-            moviesFavorites: [...state.moviesFavorites, action.payload]
+            moviesFavorites: favs
         }
-
     }
     else if (action.type === REMOVE_MOVIE_FAVORITE) {
         return {

@@ -35,7 +35,7 @@ class Movie extends React.Component {
                 })
                 alert(`${this.props.movieDetail.Title} was added to favorites`)
               }
-              }>
+              }>                
                 <BsBookmarkStar/>
               </button>
             </div>

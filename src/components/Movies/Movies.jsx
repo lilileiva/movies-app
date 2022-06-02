@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { connect, useSelector } from "react-redux";
 import { Link } from 'react-router-dom';
 import { BsBookmarkStar, BsFillBookmarkStarFill } from 'react-icons/bs'
 import {
@@ -10,34 +10,28 @@ import Loading from "../Loading/Loading.jsx";
 
 
 function Movies(state) {
-    const [loading, setLoading] = useState(true)
     const [favorite, setFavorite] = useState(false);
-    
-    const loaded = useSelector((state) => state.moviesLoaded)
 
-    useEffect(() => {
-        if (loaded) {
-            setLoading(false);
-        }
-    })
+    const moviesLoaded = useSelector((state) => state.moviesLoaded)
+    const moviesFavorites = useSelector((state) => state.moviesFavorites)
 
     return (
         <div className="flex flex-col">
-            {
-                favorite
-                    ? <div className="mx-64 z-20 mt-52">
-                        <div class="bg-white border-l-4 border-teal-500 text-teal-900 p-4 mx-64 rounded-xl" role="alert">
-                            <p class="font-bold"> ✔ Movie added to favorites</p>
-                        </div>
-                    </div>
-                    : null
-            }
             <ul className="flex flex-wrap justify-center absolute mt-40 w-full">
                 {
-                    loading
+                    favorite
+                        ? <div className="z-20 mt-52 fixed">
+                            <div className="bg-white border-l-4 border-teal-500 text-teal-900 p-4 w-64 rounded-xl" role="alert">
+                                <p className="font-bold text-center"> ✔ Movie added to favorites</p>
+                            </div>
+                        </div>
+                        : null
+                }
+                {
+                    moviesLoaded.length === 0
                         ? <Loading />
-                        : state.moviesLoaded
-                            ? state.moviesLoaded.map((movie) => (
+                        : moviesLoaded
+                            ? moviesLoaded.map((movie) => (
                                 <li className="bg-gray-600 p-4 mx-10 my-10 rounded-xl" key={movie.imdbID}>
                                     <div className="flex inline mb-2 mx-auto">
                                         <Link to={`/movies/${movie.imdbID}`}>
@@ -61,7 +55,11 @@ function Movies(state) {
                                             }, 1500)
                                         }
                                         }>
-                                            <BsBookmarkStar />
+                                            {
+                                                moviesFavorites.find(m => m.imdbID === movie.imdbID)
+                                                    ? <BsFillBookmarkStarFill />
+                                                    : <BsBookmarkStar />
+                                            }
                                         </button>
                                     </div>
                                     <Link to={`/movies/${movie.imdbID}`}>
