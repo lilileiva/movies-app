@@ -5,12 +5,13 @@ import { BsBookmarkStar, BsFillBookmarkStarFill } from 'react-icons/bs'
 import {
     getMovies,
     addMovieFavorite,
+    removeMovieFavorite,
     reset
 } from "../../redux/actions";
 import Loading from "../Loading/Loading.jsx";
 
 
-function Movies(state) {
+function Movies() {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,6 +19,7 @@ function Movies(state) {
     }, [dispatch])
 
     const [favorite, setFavorite] = useState(false);
+    const [remove, setRemove] = useState(false);
 
     const moviesLoaded = useSelector((state) => state.moviesLoaded)
     const moviesFavorites = useSelector((state) => state.moviesFavorites)
@@ -30,6 +32,15 @@ function Movies(state) {
                         ? <div className="z-20 mt-52 fixed">
                             <div className="bg-white border-l-4 border-teal-500 text-teal-900 p-4 w-64 rounded-xl" role="alert">
                                 <p className="font-bold text-center"> ✔ Movie added to favorites</p>
+                            </div>
+                        </div>
+                        : null
+                }
+                {
+                    remove
+                        ? <div className="z-20 mt-52 fixed">
+                            <div className="bg-white border-l-4 border-red-500 text-red-900 p-4 w-64 rounded-xl" role="alert">
+                                <p className="font-bold text-center"> Movie removed from favorites</p>
                             </div>
                         </div>
                         : null
@@ -49,19 +60,15 @@ function Movies(state) {
                                             </div>
                                         </Link>
                                         <button className="text-red-300 text-2xl hover:text-red-400" onClick={() => {
-                                            state.addMovieFavorite({
-                                                imdbID: movie.imdbID,
-                                                Title: movie.Title,
-                                                Year: movie.Year,
-                                                Type: movie.Type,
-                                                Poster: movie.Poster
-                                            })
-                                            setFavorite(true)
+                                            moviesFavorites.find(m => m.imdbID === movie.imdbID)
+                                                ? dispatch(removeMovieFavorite(movie.imdbID)) && setRemove(true)
+                                                : dispatch(addMovieFavorite(movie)) && setFavorite(true)
+
                                             setTimeout(() => {
                                                 setFavorite(false)
+                                                setRemove(false)
                                             }, 1500)
-                                        }
-                                        }>
+                                        }}>
                                             {
                                                 moviesFavorites.find(m => m.imdbID === movie.imdbID)
                                                     ? <BsFillBookmarkStarFill />

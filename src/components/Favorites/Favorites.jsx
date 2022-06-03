@@ -11,7 +11,7 @@ export class Favorites extends Component {
       <div className="container mx-auto">
         <div className="flex inline">
           <Link to="/">
-            <button className='mb-4 text-red-300 hover:text-red-400 text-3xl mr-4 mt-40'>
+            <button className='mb-4 text-red-300 hover:text-red-400 text-3xl ml-4 mr-4 mt-40'>
               <BsArrowLeftSquare />
             </button>
           </Link>

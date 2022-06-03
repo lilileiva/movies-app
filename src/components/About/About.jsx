@@ -18,7 +18,7 @@ function About() {
                     <br />
                     <h4>You can reach me at:</h4>
                     <br />
-                    <a rel="noreferrer" target="_blank" href="https://leiva-liliana.vercel.app/" className="bg-red-500 text-white border-2 rounded-xl mb-4">
+                    <a rel="noreferrer" target="_blank" href="https://lilianaleiva.vercel.app/" className="bg-red-500 text-white border-2 rounded-xl mb-4">
                         Portfolio
                     </a>
                     <a rel="noreferrer" target="_blank" href="http://github.com/lilileiva" className="bg-neutral-900 text-white border-2 rounded-xl mb-4">
