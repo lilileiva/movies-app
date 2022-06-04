@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { Link, useHistory } from 'react-router-dom';
 import {
   getMovies,
   addMovieFavorite,
