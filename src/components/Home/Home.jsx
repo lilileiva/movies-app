@@ -18,7 +18,7 @@ function Home() {
             />
             <div className="w-full flex flex-row justify-center">
                 <h1 className="sm:absolute w-90 text-white opacity-40 bg-red-700 font-black text-8xl text-center mx-2 xl:text-9xl">
-                    MOVIES INFO
+                    MOVIES APP
                 </h1>
             </div>
         </div>

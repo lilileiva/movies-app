@@ -53,9 +53,9 @@ function Movie() {
                 <BsArrowLeftSquare />
               </button>
             </Link>
-            <div className='sm:flex flex-col md:flex-row bg-gray-600 rounded-xl mt-4 mb-10 mx-4'>
-              <div className='flex flex-row justify-center'>
-                <img className='sm:w-fit h-auto object-cover rounded-xl md:h-full'
+            <div className='sm:flex flex-col md:flex-row mt-4 mb-10 mx-4'>
+              <div className='flex flex-row justify-center w-screen'>                
+                <img className='w-full h-full object-cover'
                   src={movieDetail.Poster}
                   alt="movie poster"
                 />
@@ -81,19 +81,19 @@ function Movie() {
                   </button>
                 </div>
                 <br />
-                <p className='text-xl'>{movieDetail.Plot}</p>
+                <p className='text-xl text-red-500'>{movieDetail.Plot}</p>
                 <br />
-                <p>Released: {movieDetail.Released}</p>
+                <p className='text-red-500'>Released: {movieDetail.Released}</p>
                 <br />
-                <p>Genre: {movieDetail.Genre}</p>
+                <p className='text-red-500'>Genre: {movieDetail.Genre}</p>
                 <br />
-                <p>Director: {movieDetail.Director}</p>
+                <p className='text-red-500'>Director: {movieDetail.Director}</p>
                 <br />
-                <p>Running time: {movieDetail.Runtime}</p>
+                <p className='text-red-500'>Running time: {movieDetail.Runtime}</p>
                 <br />
-                <p>Writer: {movieDetail.Writer}</p>
+                <p className='text-red-500'>Writer: {movieDetail.Writer}</p>
                 <br />
-                <p className='mb-2'>Actors: {movieDetail.Actors}</p>
+                <p className='mb-2 text-red-500'>Actors: {movieDetail.Actors}</p>
               </div>
             </div >
           </div>

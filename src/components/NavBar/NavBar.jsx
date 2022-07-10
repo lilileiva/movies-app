@@ -11,7 +11,7 @@ function Navbar() {
                     <Link exact to="/" >
                         <div className='flex'>
                             <button className='text-4xl font-black text-gray-700 border-2 border-current pl-2 pr-2'>
-                                MOVIES
+                                MOVIES APP
                             </button>
                         </div>
                     </Link>

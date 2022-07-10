@@ -17,13 +17,13 @@ function Favorites() {
           <button className='mb-4 text-red-300 hover:text-red-400 text-3xl ml-4 mr-4 mt-40' onClick={() => history.goBack()}>
             <BsArrowLeftSquare />
           </button>
-        <h2 className="text-3xl mt-40">Favorites</h2>
+        <h2 className="text-3xl mt-40 text-red-500">Favorites</h2>
       </div>
       <ul className="flex flex-wrap justify-center mt-4 mx-4">
         {
           moviesFavorites.length !== 0
             ? moviesFavorites.map(m => (
-              <li className="bg-gray-600 p-4 mx-10 my-10 rounded-xl" key={m.imdbID}>
+              <li className="p-4 mx-10 my-10" key={m.imdbID}>
                 <div>
                   <div className="flex inline mb-2 mx-auto">
                     <Link to={`movies/${m.imdbID}`}>
@@ -46,7 +46,7 @@ function Favorites() {
             ))
             : <div className="flex flex-col container mx-auto">
               <div className='flex justify-center'>
-                <div className='flex flex-col bg-gray-500 rounded-xl w-fit p-10 text-xl text-center mt-32'>
+                <div className='flex flex-col bg-neutral-700 rounded-xl w-fit p-10 text-xl text-center mt-32'>
                   <h4>You haven't added movies to this section yet...</h4>
                 </div>
               </div>

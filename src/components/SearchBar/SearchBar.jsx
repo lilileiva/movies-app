@@ -32,7 +32,7 @@ export class SearchBar extends Component {
         <form onSubmit={(e) => this.handleSubmit(e)} >
           <div className="flex justify-center">
             <input
-              className="border-2 border-zinc-300 rounded-xl mr-2"
+              className="border-2 border-zinc-300 rounded-xl mr-2 w-80"
               id="title"
               type="text"
               placeholder=" Find a movie..."

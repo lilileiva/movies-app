@@ -5,31 +5,31 @@ export const REMOVE_MOVIE_FAVORITE = "REMOVE_MOVIE_FAVORITE";
 export const RESET = "RESET";
 
 
-const { API_KEY } = process.env;
+const API_KEY = process.env.REACT_APP_API_KEY;
 
 export function getMovies(title) {
-    return function(dispatch) {
+    return async function (dispatch) {
         fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${title}`)
-        .then(res => res.json())
-        .then(data => {
-            dispatch({
-                type: "GET_MOVIES",
-                payload: data
+            .then(res => res.json())
+            .then(data => {
+                dispatch({
+                    type: "GET_MOVIES",
+                    payload: data
+                })
             })
-        })
     }
 };
 
 export function getMovieDetail(id) {
-    return function(dispatch) {
+    return async function (dispatch) {
         fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`)
-        .then(res => res.json())
-        .then(data => {
-            dispatch({
-                type: "GET_MOVIE_DETAIL",
-                payload: data
+            .then(res => res.json())
+            .then(data => {
+                dispatch({
+                    type: "GET_MOVIE_DETAIL",
+                    payload: data
+                })
             })
-        })
     }
 };
 

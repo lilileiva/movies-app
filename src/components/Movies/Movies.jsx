@@ -26,7 +26,7 @@ function Movies() {
 
     return (
         <div className="flex flex-col">
-            <ul className="flex flex-wrap justify-center absolute mt-40 w-full">
+            <ul className="flex flex-wrap justify-center absolute mt-40 pb-24 w-full">
                 {
                     favorite
                         ? <div className="z-20 mt-52 fixed">
@@ -48,9 +48,9 @@ function Movies() {
                 {
                     moviesLoaded.length === 0
                         ? <Loading />
-                        : moviesLoaded
+                        : moviesLoaded.length !== 0
                             ? moviesLoaded.map((movie) => (
-                                <li className="bg-gray-600 p-4 mx-10 my-10 rounded-xl" key={movie.imdbID}>
+                                <li className="p-4 px-12 mt-12 hover:scale-[1.2] ease-in-out duration-150" key={movie.imdbID}>
                                     <div className="flex inline mb-2 mx-auto">
                                         <Link to={`/movies/${movie.imdbID}`}>
                                             <div className="w-56 max-h-12">

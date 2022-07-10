@@ -10,10 +10,10 @@ function About() {
                         <BsArrowLeftSquare />
                     </button>
                 </Link>
-                <h2 className="text-3xl">About</h2>
+                <h2 className="text-3xl text-red-500">About</h2>
             </div>
             <div className='flex justify-center'>
-                <div className='flex flex-col bg-gray-500 rounded-xl w-fit p-10 text-xl text-center mx-10 my-10'>
+                <div className='flex flex-col bg-neutral-700 rounded-xl w-fit p-10 text-xl text-center mx-10 my-10'>
                     <h4>Hi! I'm Liliana from Argentina.👋</h4>
                     <br />
                     <h4>You can reach me at:</h4>
