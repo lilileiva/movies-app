@@ -15,22 +15,22 @@ function Navbar() {
                             </button>
                         </div>
                     </Link>
-                    <ul>
+                    <ul className='justify-items-center'>
                         <li className='sm:space-x-5 xl:space-x-5'>
                             <Link exact to="/" >
-                                <button className='sm:inline-flex border-neutral-800 border-2 xl:border-2 font-extrabold text-xl text-neutral-800 border-neutral-800 p-1 px-2 rounded-3xl hidden'>
-                                    Home
+                                <button className='sm:inline-flex xl:font-extrabold text-xl text-neutral-800  p-1 px-2 rounded-sm hidden hover:border-b-2 border-neutral-800'>
+                                    HOME
                                 </button>
                             </Link>
                             <Link to="/favorites" >
-                                <button className='border-2 font-extrabold text-xl text-neutral-800 border-neutral-800 p-1 px-2 rounded-3xl sm:border-2 border-neutral-800 mx-4'>
-                                    Favorites
+                                <button className='font-extrabold text-xl text-neutral-800 p-1 px-2 rounded-sm hover:border-b-2 border-neutral-800 sm:mx-4'>
+                                    FAVORITES                                    
                                 </button>
                             </Link>
                             <Link to='/about'>
-                                <button className='border-2 font-extrabold text-xl text-neutral-800 border-neutral-800 p-1 px-2 rounded-3xl'>
+                                <button className='font-extrabold text-xl text-neutral-800 p-1 px-2 rounded-sm hover:border-b-2 border-neutral-800'>
                                     <div className='flex inline h-6'>
-                                        <BsInfoLg/>
+                                        <BsInfoLg />
                                     </div>
                                 </button>
                             </Link>
@@ -38,7 +38,7 @@ function Navbar() {
                     </ul>
                 </div>
             </nav>
-        </header>
+        </header >
     )
 };
 
