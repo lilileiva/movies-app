@@ -27,7 +27,7 @@ function Movies() {
     return (
         <div className="flex flex-col">
             {
-                moviesLoaded ? <p className="flex flex-row absolute top-40 ml-32 text-xl text-red-400">{`${moviesLoaded.length} results...`}</p> : <p className="flex flex-row absolute top-40 ml-32 text-xl text-red-400">No results</p>
+                moviesLoaded ? <p className="flex flex-row relative top-40 text-xl text-red-400 border-b-2 border-red-400 self-center w-11/12">{`${moviesLoaded.length} results...`}</p> : <p className="flex flex-row absolute top-40 ml-32 text-xl text-red-400">No results</p>
             }
             <ul className="flex flex-wrap justify-center absolute mt-40 pb-24 w-full">
                 {
@@ -56,7 +56,7 @@ function Movies() {
                                 <div className="flex inline mx-auto">
                                     <Link to={`/movies/${movie.imdbID}`}>
                                         <div className="w-56 max-h-12">
-                                            <h2 className="text-xl text-red-400 group-hover:text-red-500 font-bold mr-3 truncate">
+                                            <h2 className="text-xl text-red-400 mb-2 group-hover:text-shadow-md text-red-500 font-bold truncate">
                                                 {movie.Title}
                                             </h2>
                                         </div>
@@ -73,8 +73,8 @@ function Movies() {
                                     }}>
                                         {
                                             moviesFavorites.find(m => m.imdbID === movie.imdbID)
-                                                ? <BsFillBookmarkStarFill />
-                                                : <BsBookmarkStar />
+                                                ? <BsFillBookmarkStarFill className="ml-2" />
+                                                : <BsBookmarkStar className="ml-2" />
                                         }
                                     </button>
                                 </div>

@@ -12,20 +12,23 @@ function Favorites() {
   const moviesFavorites = useSelector((state) => state.moviesFavorites)
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto pb-10">
       <div className="flex inline">
-          <button className='mb-4 text-red-300 hover:text-red-400 text-3xl ml-4 mr-4 mt-40' onClick={() => history.goBack()}>
-            <BsArrowLeftSquare />
-          </button>
+        <button className='mb-4 text-red-300 hover:text-red-400 text-3xl ml-4 mr-4 mt-40' onClick={() => history.goBack()}>
+          <BsArrowLeftSquare />
+        </button>
         <h2 className="text-3xl mt-40 text-red-500">Favorites</h2>
       </div>
+      {
+        moviesFavorites ? <p className="flex flex-row relative text-xl ml-4 justify-end text-red-400 border-b-2 border-red-400 self-center w-11/12">{`${moviesFavorites.length} favorites`}</p> : null
+      }
       <ul className="flex flex-wrap justify-center mt-4 mx-4">
         {
           moviesFavorites.length !== 0
             ? moviesFavorites.map(m => (
-              <li className="p-4 mx-10 my-10" key={m.imdbID}>
+              <li className="p-4 mx-10 my-2" key={m.imdbID}>
                 <div>
-                  <div className="flex inline mb-2 mx-auto">
+                  <div className="flex inline mx-auto">
                     <Link to={`movies/${m.imdbID}`}>
                       <div className="w-56 max-h-12">
                         <h2 className="text-xl text-red-400 hover:text-red-500 font-bold mr-3 truncate">{m.Title}</h2>
