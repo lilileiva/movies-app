@@ -50,11 +50,11 @@ function Movies() {
                         ? <Loading />
                         : moviesLoaded.length !== 0
                             ? moviesLoaded.map((movie) => (
-                                <li className="p-4 px-12 mt-12 hover:scale-[1.2] ease-in-out duration-150" key={movie.imdbID}>
+                                <li className="group p-4 px-12 mt-12 hover:scale-[1.2] ease-in-out duration-150" key={movie.imdbID}>
                                     <div className="flex inline mb-2 mx-auto">
                                         <Link to={`/movies/${movie.imdbID}`}>
                                             <div className="w-56 max-h-12">
-                                                <h2 className="text-xl text-red-400 hover:text-red-500 font-bold mr-3 truncate">
+                                                <h2 className="text-xl text-red-400 group-hover:text-red-500 font-bold mr-3 truncate">
                                                     {movie.Title}
                                                 </h2>
                                             </div>
@@ -77,9 +77,9 @@ function Movies() {
                                         </button>
                                     </div>
                                     <Link to={`/movies/${movie.imdbID}`}>
-                                        <img className="w-64 h-96 object-cover" src={movie.Poster} alt="movie poster" />
+                                        <img className="w-64 h-96 object-cover shadow-lg shadow-black" src={movie.Poster} alt="movie poster" />
                                     </Link>
-                                    <p className="text-red-400">{movie.Type} ({movie.Year})</p>
+                                    <p className="text-red-400 p-2 bg-neutral-900 opacity-0 group-hover:opacity-100 bg-opacity-90 duration-300 transform -translate-y-10">{movie.Type} ({movie.Year})</p>
                                 </li>
                             ))
                             : <p className="text-2xl text-red-400 mt-20">No results... :(</p>

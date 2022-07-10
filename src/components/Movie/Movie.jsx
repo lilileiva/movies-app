@@ -54,7 +54,7 @@ function Movie() {
               </button>
             </Link>
             <div className='sm:flex flex-col md:flex-row mt-4 mb-10 mx-4'>
-              <div className='flex flex-row justify-center w-screen'>                
+              <div className='flex flex-row justify-center w-2/4'>                
                 <img className='w-full h-full object-cover'
                   src={movieDetail.Poster}
                   alt="movie poster"
