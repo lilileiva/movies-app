@@ -22,8 +22,8 @@ LINK: https://movies-vc.vercel.app/
 ---
 
 ### Project screens
-![image](https://user-images.githubusercontent.com/94813118/171720971-c8779acf-5362-4e12-9217-e2cfb2b67adf.png)
-![image](https://user-images.githubusercontent.com/94813118/171721065-b74d485b-bce8-4cdd-bd97-f4280306a1a7.png)
-![image](https://user-images.githubusercontent.com/94813118/171721160-de375a9f-a8c4-43bd-8716-609f06713cd8.png)
+![image](https://user-images.githubusercontent.com/94813118/178128980-0d270924-a303-4c4f-ae88-2543f272cfb9.png)
+![image](https://user-images.githubusercontent.com/94813118/178128959-b4b7804c-3cdd-4334-aadc-21f39901fd1f.png)
+
 
 
